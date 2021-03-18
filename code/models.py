@@ -54,10 +54,10 @@ class YourModel(tf.keras.Model):
         #             explicitly reshape any tensors anywhere in your network.
 
         self.architecture = [ # want relatively equal dist of parameters between nn and conv
-               Conv2D(32), # look at padding, stride, activation functions
-               Conv2D(32),
-               Conv2D(32), 
-               MaxPool2D(pool_size=(2, 2), strides=None, padding='valid', data_format=None), # after every conv, every other etc.
+               Conv2D(64, 3, 1, padding="same", activation="relu"), # look at padding, stride, activation functions
+               Conv2D(64, 3, 1, padding="same", activation="relu"),
+               Conv2D(64, 3, 1, padding="same", activation="relu"), 
+               MaxPool2D(2), # after every conv, every other etc.
                Dropout(.2), # add between layers
                Flatten(data_format=None),
                Dense(32, activation='softmax')]
