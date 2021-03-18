@@ -57,10 +57,10 @@ class YourModel(tf.keras.Model):
                Conv2D(64, 3, 1, padding="same", activation="relu"), # look at padding, stride, activation functions
                Conv2D(64, 3, 1, padding="same", activation="relu"),
                Conv2D(64, 3, 1, padding="same", activation="relu"), 
-               MaxPool2D(2), # after every conv, every other etc.
+               MaxPool2D(2), # after every conv, every other etc.; poolsize (2,2)
                Dropout(.2), # add between layers
                Flatten(data_format=None),
-               Dense(32, activation='softmax')]
+               Dense(15, activation='softmax')]
        #  self.architecture = []
 
     def call(self, x):
