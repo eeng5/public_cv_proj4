@@ -60,7 +60,6 @@ class YourModel(tf.keras.Model):
                MaxPool2D(pool_size=(2, 2)), # after every conv, every other etc.; poolsize (2,2)
                Dropout(.2), # add between layers
                Flatten(data_format=None),
-               Dense(512),
                Dense(15, activation='softmax')]
        #  self.architecture = []
 
@@ -78,8 +77,8 @@ class YourModel(tf.keras.Model):
 
         # TODO: Select a loss function for your network (see the documentation
         #       for tf.keras.losses)
-        cce = tf.keras.losses.sparse_categorical_crossentropy(labels, predictions, from_logits=False)
-        return cce
+        loss = tf.keras.losses.sparse_categorical_crossentropy(labels, predictions, from_logits=False)
+        return loss
 
         #  cce = tf.keras.losses.CategoricalCrossentropy()
 
@@ -169,5 +168,5 @@ class VGGModel(tf.keras.Model):
         # TODO: Select a loss function for your network (see the documentation
         #       for tf.keras.losses)
 
-        cce = tf.keras.losses.CategoricalCrossentropy()
-        return cce(labels, predictions)
+        loss = tf.keras.losses.sparse_categorical_crossentropy(labels, predictions, from_logits=False)
+        return loss
