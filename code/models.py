@@ -78,9 +78,10 @@ class YourModel(tf.keras.Model):
 
         # TODO: Select a loss function for your network (see the documentation
         #       for tf.keras.losses)
+        cce = tf.keras.losses.sparse_categorical_crossentropy()
+        return cce(labels, predictions, from_logits=False)
 
-        cce = tf.keras.losses.CategoricalCrossentropy()
-        return cce(labels, predictions)
+        #  cce = tf.keras.losses.CategoricalCrossentropy()
 
 
 class VGGModel(tf.keras.Model):
