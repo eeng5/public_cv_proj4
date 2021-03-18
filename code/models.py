@@ -60,6 +60,7 @@ class YourModel(tf.keras.Model):
                MaxPool2D(pool_size=(2, 2)), # after every conv, every other etc.; poolsize (2,2)
                Dropout(.2), # add between layers
                Flatten(data_format=None),
+               Dense(512),
                Dense(15, activation='softmax')]
        #  self.architecture = []
 
