@@ -62,8 +62,8 @@ class YourModel(tf.keras.Model):
                Flatten(data_format=None),
                Dense(70, activation='relu'),
                Dense(60, activation='relu'),
-               Dense(50, activation='relu'),
-               Dense(50, activation='relu'),
+              #  Dense(50, activation='relu'),
+              #  Dense(50, activation='relu'),
                Dense(15, activation='softmax')]
        #  self.architecture = []
 
