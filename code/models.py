@@ -60,7 +60,7 @@ class YourModel(tf.keras.Model):
                Conv2D(512, 3, 1, padding="same", activation="relu"), 
                MaxPool2D(pool_size=(2, 2)),
                Conv2D(512, 3, 1, padding="same", activation="relu"),
-               MaxPool2D(pool_size=(2, 2)), # after every conv, every other etc.; poolsize (2,2)
+               MaxPool2D(pool_size=(4, 4)), # after every conv, every other etc.; poolsize (2,2)
               #  Dropout(.2), # add between layers
                Flatten(data_format=None),
                Dense(15, activation='softmax')]
