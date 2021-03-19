@@ -56,7 +56,6 @@ class YourModel(tf.keras.Model):
         self.architecture = [ # want relatively equal dist of parameters between nn and conv
                Conv2D(64, 3, 1, padding="same", activation="relu"), # look at padding, stride, activation functions
                Conv2D(128, 3, 1, padding="same", activation="relu"),
-               MaxPool2D(pool_size=(2, 2)),
                Conv2D(256, 3, 1, padding="same", activation="relu"),
                MaxPool2D(pool_size=(2, 2)),
                Conv2D(512, 3, 1, padding="same", activation="relu"), 
