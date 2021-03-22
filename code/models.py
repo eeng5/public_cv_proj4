@@ -55,7 +55,7 @@ class YourModel(tf.keras.Model):
 
         self.architecture = [ # want relatively equal dist of parameters between nn and conv
                Conv2D(64, 3, 1, padding="same", activation="relu"), # look at padding, stride, activation functions
-               Dropout(.2),
+               MaxPool2D(pool_size=(2, 2)),
                Conv2D(64, 3, 1, padding="same", activation="relu"),
               #  Conv2D(64, 3, 1, padding="same", activation="relu"),
                MaxPool2D(pool_size=(4, 4)), # after every conv, every other etc.; poolsize (2,2)
@@ -63,7 +63,9 @@ class YourModel(tf.keras.Model):
                Flatten(data_format=None),
               #  Dense(75, activation='relu'),
                Dense(256, activation='relu'),
+               Dropout(.2),
                Dense(64, activation='relu'),
+               Dropout(.2),
               #  Dense(60, activation='relu'),
                Dense(15, activation='softmax')]
        #  self.architecture = []
