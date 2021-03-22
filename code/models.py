@@ -62,7 +62,7 @@ class YourModel(tf.keras.Model):
               #  Dropout(.2), # add between layers
                Flatten(data_format=None),
               #  Dense(75, activation='relu'),
-               Dense(70, activation='relu'),
+               Dense(72, activation='relu'),
                Dense(65, activation='relu'),
                Dense(60, activation='relu'),
               #  Dense(50, activation='relu'),
