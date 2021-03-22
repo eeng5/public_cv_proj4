@@ -19,7 +19,7 @@ class YourModel(tf.keras.Model):
 
         # TODO: Select an optimizer for your network (see the documentation
         #       for tf.keras.optimizers)
-        self.optimizer = tf.keras.optimizers.Adam(hp.learning_rate, beta_1=0.9, beta_2=0.999)
+        self.optimizer = tf.keras.optimizers.Adamax(hp.learning_rate, beta_1=0.9, beta_2=0.999)
        #  self.optimizer = tf.keras.optimizers.SGD(hp.learning_rate)
        #  self.optimizer = None
 
@@ -63,7 +63,7 @@ class YourModel(tf.keras.Model):
               #  Dense(75, activation='relu'),
                Dense(70, activation='relu'),
                Dense(60, activation='relu'),
-               Dense(55, activation='relu'),
+               Dense(60, activation='relu'),
               #  Dense(50, activation='relu'),
               #  Dense(50, activation='relu'),
                Dense(15, activation='softmax')]
