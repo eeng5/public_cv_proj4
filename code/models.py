@@ -19,7 +19,7 @@ class YourModel(tf.keras.Model):
 
         # TODO: Select an optimizer for your network (see the documentation
         #       for tf.keras.optimizers)
-        self.optimizer = tf.keras.optimizers.Adamax(hp.learning_rate, beta_1=0.9, beta_2=0.999)
+        self.optimizer = tf.keras.optimizers.Adam(hp.learning_rate, beta_1=0.9, beta_2=0.999)
        #  self.optimizer = tf.keras.optimizers.SGD(hp.learning_rate)
        #  self.optimizer = None
 
@@ -55,6 +55,7 @@ class YourModel(tf.keras.Model):
 
         self.architecture = [ # want relatively equal dist of parameters between nn and conv
                Conv2D(64, 3, 1, padding="same", activation="relu"), # look at padding, stride, activation functions
+               Dropout(.2),
                Conv2D(64, 3, 1, padding="same", activation="relu"),
               #  Conv2D(64, 3, 1, padding="same", activation="relu"),
                MaxPool2D(pool_size=(4, 4)), # after every conv, every other etc.; poolsize (2,2)
@@ -62,7 +63,7 @@ class YourModel(tf.keras.Model):
                Flatten(data_format=None),
               #  Dense(75, activation='relu'),
                Dense(70, activation='relu'),
-               Dense(60, activation='relu'),
+               Dense(65, activation='relu'),
                Dense(60, activation='relu'),
               #  Dense(50, activation='relu'),
               #  Dense(50, activation='relu'),
