@@ -19,8 +19,8 @@ class YourModel(tf.keras.Model):
 
         # TODO: Select an optimizer for your network (see the documentation
         #       for tf.keras.optimizers)
-
-        self.optimizer = tf.keras.optimizers.SGD(hp.learning_rate)
+        self.optimizer = tf.keras.optimizers.Adam(hp.learning_rate, beta_1=0.9, beta_2=0.999)
+       #  self.optimizer = tf.keras.optimizers.SGD(hp.learning_rate)
        #  self.optimizer = None
 
         # TODO: Build your own convolutional neural network, using Dropout at
